@@ -2,7 +2,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import prisma from "../lib/prisma"; // Prismaのクライアントインスタンスをインポート
+import prisma from "./lib/prisma"; // Prismaのクライアントインスタンスをインポート
 
 const app = express();
 app.use(cors());
