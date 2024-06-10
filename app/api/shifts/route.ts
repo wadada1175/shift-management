@@ -31,3 +31,18 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+
+export async function DELETE(req: NextRequest) {
+  try {
+    const { id } = await req.json();
+    await prisma.shift.delete({
+      where: { id: Number(id) },
+    });
+    return NextResponse.json({ message: "Shift deleted" }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Failed to delete shift" },
+      { status: 500 }
+    );
+  }
+}

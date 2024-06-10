@@ -22,28 +22,33 @@ const NewShift = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={employee}
-        onChange={(e) => setEmployee(e.target.value)}
-        placeholder="従業員名"
-        required
-      />
-      <input
-        type="datetime-local"
-        value={startTime}
-        onChange={(e) => setStartTime(e.target.value)}
-        required
-      />
-      <input
-        type="datetime-local"
-        value={endTime}
-        onChange={(e) => setEndTime(e.target.value)}
-        required
-      />
-      <button type="submit">シフトを作成</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={employee}
+          onChange={(e) => setEmployee(e.target.value)}
+          placeholder="従業員名"
+          required
+        />
+        <input
+          type="datetime-local"
+          value={startTime}
+          onChange={(e) => setStartTime(e.target.value)}
+          required
+        />
+        <input
+          type="datetime-local"
+          value={endTime}
+          onChange={(e) => setEndTime(e.target.value)}
+          required
+        />
+        <button type="submit">シフトを作成</button>
+      </form>
+      <div>
+        <a href="/">戻る</a>
+      </div>
+    </>
   );
 };
 
