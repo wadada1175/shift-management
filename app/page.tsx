@@ -2,8 +2,15 @@
 
 import { useEffect, useState } from "react";
 
+type Shift = {
+  id: number;
+  employee: string;
+  startTime: string;
+  endTime: string;
+};
+
 const Home = () => {
-  const [shifts, setShifts] = useState([]);
+  const [shifts, setShifts] = useState<Shift[]>([]);
 
   useEffect(() => {
     const fetchShifts = async () => {
